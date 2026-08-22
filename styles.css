@@ -1,8 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Cabin:ital,wght@0,400..700;1,400..700&family=Lexend+Deca:wght@100..900&display=swap');
-
-html {
-    font-family: sans-serif;
+:root {
+    --system-font: system-ui, -apple-system, sans-serif;
     --color-grey: #f0f0f0;
     --color-blueberry: #4568BC;
     --color-pink: #FC70A4;
@@ -10,50 +7,13 @@ html {
     --color-cyan: #53C2EF;
 }
 
-/* Google Sans Flex — variable font (weight, width, slant, grade, roundness).
-   Font file lives at fonts/GoogleSansFlex-Variable.ttf, alongside index.html. */
-@font-face {
-    font-family: 'Google Sans Flex';
-    src: url('fonts/GoogleSansFlex-Variable.ttf') format('truetype');
-    font-weight: 1 1000;
-    font-stretch: 25% 200%;
-    font-style: normal;
-    font-display: swap;
-}
-
-/* ===== Cài đặt chữ theo Heading ===== */
-/* Nếu class dưới đây gắn nhầm chỗ, cứ thêm class="heading-1" / "heading-2" /
-   "heading-3" thẳng vào thẻ HTML đúng cần đổi — không cần sửa CSS nữa. */
-
-/* Heading 1 — chữ "Pure Lock" (trang chủ), "Announcements", "Help Center" */
-.heading-1,
-.toolbar-title {
-    font-family: 'Google Sans Flex', sans-serif;
-    font-variation-settings: 'wght' 1000, 'wdth' 151, 'slnt' 0, 'GRAD' 100, 'ROND' 100;
-    font-optical-sizing: auto;
-}
-
-/* Heading 2 — tên tiêu đề của các mục/section */
-.heading-2,
-.modal-title,
-.date,
-.question {
-    font-family: 'Google Sans Flex', sans-serif;
-    font-variation-settings: 'wght' 600, 'wdth' 100, 'slnt' 0, 'GRAD' 100, 'ROND' 100;
-    font-optical-sizing: auto;
-}
-
-/* Heading 3 — chữ mô tả bình thường dưới các mục */
-.heading-3,
-p {
-    font-family: 'Google Sans Flex', sans-serif;
-    font-variation-settings: 'wght' 450, 'wdth' 100, 'slnt' 0, 'GRAD' 100, 'ROND' 100;
-    font-optical-sizing: auto;
+html {
+    font-family: var(--system-font);
 }
 
 body {
     margin: 0;
-    font-family: 'Cabin', sans-serif;
+    font-family: var(--system-font);
     line-height: 1.5rem;
     padding: 0;
 }
@@ -87,7 +47,7 @@ select {
     background: white;
     border: 1px solid black;
     border-radius: 4px;
-    font-family: 'Cabin';
+    font-family: var(--system-font);
     font-size: 16px;
     font-stretch: condensed;
     font-weight: bold;
@@ -98,7 +58,7 @@ select {
 }
 
 option {
-    font-family: 'Lato', sans-serif !important;
+    font-family: var(--system-font) !important;
 }
 
 .content-wrapper {
@@ -113,7 +73,7 @@ option {
     align-items: center;
     background: white;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 8px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--system-font);
     justify-content: flex-end;
     left: 0;
     line-height: normal;
@@ -129,7 +89,7 @@ option {
 
 .toolbar svg {
     display: block;
-    font-family: sans-serif !important;
+    font-family: var(--system-font) !important;
     height: 36px;
     margin-left: 24px;
     width: 36px;
@@ -165,7 +125,6 @@ option {
 }
 
 .toolbar a {
-    /* color: black; */
     color: var(--color-blueberry);
     font-size: 40px;
     font-weight: bold;
@@ -254,7 +213,7 @@ option {
     background: #16a085;
     bottom: 0;
     color: #f1c40f !important;
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--system-font);
     left: 0;
     padding: 16px 16px calc(16px + env(safe-area-inset-bottom, 0));
     position: fixed;
@@ -264,15 +223,10 @@ option {
 
 .footer a {
     border-bottom: 1px solid #ffffff;
-    /* color: #FFCB00; */
     color: #ffffff;
     font-size: 20px;
     font-weight: bold;
     text-transform: uppercase;
-}
-
-.dark .footer {
-    /* background: #d35400; */
 }
 
 .modal-background {
@@ -333,12 +287,10 @@ body.dark {
 }
 
 .dark .toolbar svg path {
-    /* fill: white; */
     fill: var(--color-cyan);
 }
 
 .dark .toolbar a {
-    /* color: white; */
     color: var(--color-cyan);
 }
 
@@ -441,15 +393,7 @@ body.dark {
     }
 }
 
-/*
-@media only screen and (max-width: 600px), (max-height: 600px) {
-    .toolbar {
-        padding: 16px 16pxs;
-    }
-}
-*/
-@media screen and (max-width: 480px),
-(max-height: 480px) {
+@media screen and (max-width: 480px), (max-height: 480px) {
     p {
         font-size: 16px;
     }
@@ -484,7 +428,6 @@ ul.modules {
     overflow: hidden;
     padding-left: 18px;
     padding-right: 18px;
-
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-content: left;
@@ -502,10 +445,8 @@ li.module {
     margin: 0;
     overflow: hidden;
     padding: 4px;
-    /* width: 50%; */
     word-wrap: break-word;
     -webkit-line-clamp: 1;
-
     grid-column: span 1;
 }
 
@@ -560,8 +501,7 @@ li.module:nth-child(4n+2) {
     padding: 0 8px;
 }
 
-@media only screen and (max-width: 720px),
-(max-height: 600px) {
+@media only screen and (max-width: 720px), (max-height: 600px) {
     ul {
         margin-left: 8px;
         margin-right: 8px;
@@ -597,7 +537,6 @@ li.module:nth-child(4n+2) {
 }
 
 @media only screen and (max-width: 480px) {
-
     li,
     li.module,
     .yuh-apps {
@@ -618,7 +557,61 @@ li.module:nth-child(4n+2) {
 
 .date * {
     align-content: center;
-    font-family: 'Montserrat', 'Roboto', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '.SFNSText-Regular', 'sans-serif';
+    font-family: var(--system-font);
+    justify-content: center;
+    vertical-align: center;
+}
+
+.nav-wrapper {
+    background: #073042;
+}
+
+.nav-wrapper a {
+    color: #3ddc84;
+}
+
+.midnight-text {
+    color: #073042;
+}
+
+.midnight-text strong {
+    border-bottom: 1px solid #073042;
+}
+
+.dark .midnight-text {
+    color: #8adafc;
+}
+
+.dark .midnight-text strong {
+    border-bottom: 1px solid #8adafc;
+}
+
+li.h {
+    background: transparent !important;
+    font-size: 20px;
+    display: list-item;
+    list-style: disc outside none;
+    margin-left: 20px;
+    width: unset !important;
+}
+
+a.h {
+    color: var(--color-pink);
+    font-weight: bold;
+}
+
+.question {
+    color: var(--color-pink);
+    font-family: var(--system-font);
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 720px), (max-height: 480px) {
+    .date {
+        font-size: 18px;
+    }
+}
+Roboto', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '.SFNSText-Regular', 'sans-serif';
     justify-content: center;
     vertical-align: center;
 }
