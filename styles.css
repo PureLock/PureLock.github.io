@@ -10,6 +10,47 @@ html {
     --color-cyan: #53C2EF;
 }
 
+/* Google Sans Flex — variable font (weight, width, slant, grade, roundness).
+   Font file lives at fonts/GoogleSansFlex-Variable.ttf, alongside index.html. */
+@font-face {
+    font-family: 'Google Sans Flex';
+    src: url('fonts/GoogleSansFlex-Variable.ttf') format('truetype');
+    font-weight: 1 1000;
+    font-stretch: 25% 200%;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ===== Cài đặt chữ theo Heading ===== */
+/* Nếu class dưới đây gắn nhầm chỗ, cứ thêm class="heading-1" / "heading-2" /
+   "heading-3" thẳng vào thẻ HTML đúng cần đổi — không cần sửa CSS nữa. */
+
+/* Heading 1 — chữ "Pure Lock" (trang chủ), "Announcements", "Help Center" */
+.heading-1,
+.toolbar-title {
+    font-family: 'Google Sans Flex', sans-serif;
+    font-variation-settings: 'wght' 1000, 'wdth' 151, 'slnt' 0, 'GRAD' 100, 'ROND' 100;
+    font-optical-sizing: auto;
+}
+
+/* Heading 2 — tên tiêu đề của các mục/section */
+.heading-2,
+.modal-title,
+.date,
+.question {
+    font-family: 'Google Sans Flex', sans-serif;
+    font-variation-settings: 'wght' 600, 'wdth' 100, 'slnt' 0, 'GRAD' 100, 'ROND' 100;
+    font-optical-sizing: auto;
+}
+
+/* Heading 3 — chữ mô tả bình thường dưới các mục */
+.heading-3,
+p {
+    font-family: 'Google Sans Flex', sans-serif;
+    font-variation-settings: 'wght' 450, 'wdth' 100, 'slnt' 0, 'GRAD' 100, 'ROND' 100;
+    font-optical-sizing: auto;
+}
+
 body {
     margin: 0;
     font-family: 'Cabin', sans-serif;
